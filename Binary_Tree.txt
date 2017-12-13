@@ -1,0 +1,23 @@
+
+/**
+ * Definition for a binary tree node -
+ * public class Node {
+ *     int val;
+ *     Node left;
+ *     Node right;
+ *     Node(int x) { 
+ *	val = x;
+ *     }
+ * }
+ */
+
+Max depth of binary tree:
+
+class Solution {    
+	public int maxDepth(Node root) {
+        	if(root==null){
+            	 return 0;
+        }
+        return 1+Math.max(maxDepth(root.left),maxDepth(root.right));
+    }
+}
