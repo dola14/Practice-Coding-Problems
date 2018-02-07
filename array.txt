@@ -1,0 +1,46 @@
+Moving zeroes to right:
+
+import java.io.*;
+class Solution {
+    public void moveZeroesToRight(int[] arrOfNums) {
+        int n = arrOfNums.length;
+        int idx = 0; // index to count the nonzero numbers
+        
+        for(int i = 0; i < n; i++){
+            if(arrOfNums[i] != 0){
+                arrOfNums[idx++] = nums[i];
+            }
+        }
+        //index is set as 1st index of 0
+        while(index < n){
+            arrOfNums[index++] = 0;
+        }        
+    }
+
+
+    public static void main (String[] args)
+    {
+        int arr[] = {1, 9, 8, 4, 0, 0, 2, 7, 0, 6, 0, 9};
+        moveZeroesToRight(arr);
+        System.out.println("Array after moving zeros to the right: ");
+        for (int i=0; i<arr.length; i++)
+            System.out.print(arr[i]+" ");
+    }
+
+}
+
+Time Complexity: O(n) where n is number of elements in the array.
+Space Complexity: O(1)
+
+============================================================================
+Kth Largest Element in an Array
+
+
+O(N lg N) running time + O(1) memory
+The simplest approach is to sort the entire input array and then access the element by it's index (which is O(1)) operation:
+
+public int findKthLargest(int[] nums, int k) {
+        final int N = nums.length;
+        Arrays.sort(nums);
+        return nums[N - k];
+}
